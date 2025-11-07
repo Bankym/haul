@@ -1,0 +1,8 @@
+{
+  "user.ejs": {
+    "description": "all registered users"
+  },
+  "admin.ejs": {
+    "description": ""
+  }
+}

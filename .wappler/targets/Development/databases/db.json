@@ -1,0 +1,79 @@
+{
+  "direct": true,
+  "type": "sqlite3",
+  "connection": {
+    "filename": "/db/db_dev.sqlite3"
+  },
+  "schema": {
+    "tables": {
+      "users": {
+        "db": {},
+        "columns": {
+          "id": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "unique": false,
+              "nullable": false
+            }
+          },
+          "name": {
+            "db": {
+              "type": "string",
+              "maxLength": 255,
+              "primary": false,
+              "unique": false,
+              "nullable": false
+            }
+          },
+          "email": {
+            "db": {
+              "type": "string",
+              "maxLength": 255,
+              "primary": false,
+              "unique": true,
+              "nullable": false
+            }
+          },
+          "password": {
+            "db": {
+              "type": "string",
+              "maxLength": 255,
+              "primary": false,
+              "unique": false,
+              "nullable": false
+            }
+          },
+          "role": {
+            "db": {
+              "type": "integer",
+              "default": "1",
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          },
+          "created_at": {
+            "db": {
+              "type": "datetime",
+              "default": "knex.fn.now()",
+              "primary": false,
+              "unique": false,
+              "nullable": false
+            }
+          },
+          "updated_at": {
+            "db": {
+              "type": "datetime",
+              "default": "knex.fn.now()",
+              "primary": false,
+              "unique": false,
+              "nullable": false
+            }
+          }
+        }
+      }
+    },
+    "views": {}
+  }
+}

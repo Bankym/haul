@@ -1,0 +1,10 @@
+{
+  "home.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "about.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  }
+}

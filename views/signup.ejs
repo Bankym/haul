@@ -1,0 +1,407 @@
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" is="dmx-app" id="page1" appConnect="local" bootstrap5="local" components="{dmxValidator:{}}" -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Started - Shipper & Carrier Registration</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      color: white;
+      padding: 40px 20px;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.2em;
+      opacity: 0.95;
+    }
+
+    .registration-sections {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .section-card {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .section-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    .icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-right: 20px;
+    }
+
+    .shipper-icon {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .carrier-icon {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .section-header h2 {
+      font-size: 1.8em;
+      color: #333;
+    }
+
+    .section-description {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 1.05em;
+    }
+
+    .registration-options {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .option-card {
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .option-card:hover {
+      border-color: #667eea;
+      background: #f8f9ff;
+      transform: translateX(5px);
+    }
+
+    .option-card h3 {
+      font-size: 1.3em;
+      margin-bottom: 8px;
+      color: #333;
+      display: flex;
+      align-items: center;
+    }
+
+    .option-card h3::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #667eea;
+      margin-right: 10px;
+    }
+
+    .option-card p {
+      color: #666;
+      font-size: 0.95em;
+      margin-bottom: 15px;
+    }
+
+    .option-card ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .option-card ul li {
+      padding: 5px 0;
+      color: #555;
+      font-size: 0.9em;
+    }
+
+    .option-card ul li::before {
+      content: '✓';
+      color: #667eea;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 15px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .carrier-button {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .carrier-button:hover {
+      box-shadow: 0 5px 15px rgba(240, 147, 251, 0.4);
+    }
+
+    .benefits {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      margin-top: 30px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .benefits h3 {
+      text-align: center;
+      font-size: 1.8em;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .benefit-item {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .benefit-item .benefit-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .benefit-item h4 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .benefit-item p {
+      color: #666;
+      font-size: 0.95em;
+    }
+
+    footer {
+      text-align: center;
+      color: white;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      .registration-sections {
+        grid-template-columns: 1fr;
+      }
+
+      .section-card {
+        padding: 25px;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Let's Get Started</h1>
+      <p>Join our platform and streamline your shipping experience</p>
+    </header>
+
+    <div class="registration-sections">
+      <!-- Shipper Registration Section -->
+      <div class="section-card">
+        <div class="section-header">
+          <div class="icon shipper-icon">📦</div>
+          <h2>Register as Shipper</h2>
+        </div>
+        <p class="section-description">
+          Ship your goods efficiently with access to a network of trusted carriers
+        </p>
+
+        <div class="registration-options">
+          <div class="option-card" onclick="navigateToRegistration('shipper-individual')">
+            <h3>Individual Shipper</h3>
+            <p>Perfect for personal shipping needs and occasional deliveries</p>
+            <ul>
+              <li>Quick registration process</li>
+              <li>Ship personal items</li>
+              <li>Track your shipments</li>
+              <li>Flexible payment options</li>
+            </ul>
+            <button class="cta-button">Register as Individual</button>
+          </div>
+
+          <div class="option-card" onclick="navigateToRegistration('shipper-business')">
+            <h3>Business Shipper</h3>
+            <p>Comprehensive solutions for businesses of all sizes</p>
+            <ul>
+              <li>Volume discounts</li>
+              <li>Multi-user accounts</li>
+              <li>Advanced analytics</li>
+              <li>API integration</li>
+              <li>Dedicated support</li>
+            </ul>
+            <button class="cta-button">Register as Business</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrier Registration Section -->
+      <div class="section-card">
+        <div class="section-header">
+          <div class="icon carrier-icon">🚚</div>
+          <h2>Register as Carrier</h2>
+        </div>
+        <p class="section-description">
+          Grow your delivery business by connecting with shippers nationwide
+        </p>
+
+        <div class="registration-options">
+          <div class="option-card" onclick="navigateToRegistration('carrier-individual')">
+            <h3>Individual Carrier</h3>
+            <p>Start earning with your own vehicle and flexible schedule</p>
+            <ul>
+              <li>Be your own boss</li>
+              <li>Flexible working hours</li>
+              <li>Instant payment options</li>
+              <li>Route optimization</li>
+            </ul>
+            <button class="cta-button carrier-button">Register as Individual</button>
+          </div>
+
+          <div class="option-card" onclick="navigateToRegistration('carrier-business')">
+            <h3>Business Carrier</h3>
+            <p>Scale your fleet and manage multiple drivers efficiently</p>
+            <ul>
+              <li>Fleet management tools</li>
+              <li>Driver management</li>
+              <li>Priority job access</li>
+              <li>Bulk payment processing</li>
+              <li>Business analytics</li>
+            </ul>
+            <button class="cta-button carrier-button">Register as Business</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="benefits">
+      <h3>Why Join Our Platform?</h3>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon">🔒</div>
+          <h4>Secure & Reliable</h4>
+          <p>Industry-leading security with verified users and secure payments</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">⚡</div>
+          <h4>Fast & Efficient</h4>
+          <p>Streamlined processes to get you shipping or delivering quickly</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">📱</div>
+          <h4>Easy to Use</h4>
+          <p>Intuitive platform accessible from any device, anywhere</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">💬</div>
+          <h4>24/7 Support</h4>
+          <p>Dedicated customer support team ready to help anytime</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Have questions? Contact us at support@yourplatform.com</p>
+      <p style="margin-top: 10px; font-size: 0.9em;">© 2025 Your Platform. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    function navigateToRegistration(type) {
+            // This function would redirect to the appropriate registration form
+            // For now, it shows an alert - replace with actual navigation logic
+            alert(`Navigating to ${type.replace('-', ' ')} registration...`);
+            
+            // Example navigation (uncomment and modify as needed):
+            // window.location.href = `/register/${type}`;
+        }
+
+        // Add smooth hover effects
+        document.querySelectorAll('.option-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (e.target.tagName !== 'BUTTON') {
+                    this.querySelector('button').click();
+                }
+            });
+        });
+  </script>
+</body>
+
+</html>
